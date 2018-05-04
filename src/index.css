@@ -4,3 +4,9 @@ body {
   font-family: sans-serif;
   box-sizing: border-box;
 }
+
+.card-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}

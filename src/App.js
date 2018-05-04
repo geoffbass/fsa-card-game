@@ -24,7 +24,7 @@ const Card = ({ cost, imageURL, title, type }) => (
 class App extends Component {
   render() {
     return (
-      <React.Fragment>
+      <div className="card-list">
         <Card
           cost={3}
           imageURL="https://cdn-images-1.medium.com/max/1600/1*dE4F_nf8P60V2baaaOxgLQ.jpeg"
@@ -113,7 +113,7 @@ class App extends Component {
             <p>FSA Card Game</p>
           </div>
         </div>
-      </React.Fragment>
+      </div>
     );
   }
 }
