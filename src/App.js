@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import logo from './logo.svg';
+import PropTypes from 'prop-types';
 import './Card.css';
 
 const Card = ({ children, cost, imageURL, title, type }) => (
@@ -8,7 +8,12 @@ const Card = ({ children, cost, imageURL, title, type }) => (
       <h4>{title}</h4>
       <h5 className="cost">{cost}</h5>
     </div>
-    <img src={imageURL} />
+    <img
+      src={
+        imageURL ||
+        'https://pbs.twimg.com/profile_images/694191024416112642/VtJUhbKk_400x400.png'
+      }
+    />
     <div className="inverted-box">
       <p>{type}</p>
     </div>
@@ -20,6 +25,13 @@ const Card = ({ children, cost, imageURL, title, type }) => (
     </div>
   </div>
 );
+
+Card.propTypes = {
+  cost: PropTypes.number.isRequired,
+  imageURL: PropTypes.string,
+  title: PropTypes.string.isRequired,
+  type: PropTypes.string.isRequired
+};
 
 const Effect = ({ text }) => (
   <div className="attribute">
