@@ -2,10 +2,36 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './Card.css';
 
+const Card = ({ cost, imageURL, title, type }) => (
+  <div className="card">
+    <div className="header inverted-box">
+      <h4>{title}</h4>
+      <h5 className="cost">{cost}</h5>
+    </div>
+    <img src={imageURL} />
+    <div className="inverted-box">
+      <p>{type}</p>
+    </div>
+    <div className="card-text">
+      <div className="card-attributes">attributes go here</div>
+    </div>
+    <div className="footer">
+      <p>FSA Card Game</p>
+    </div>
+  </div>
+);
+
 class App extends Component {
   render() {
     return (
       <React.Fragment>
+        <Card
+          cost={3}
+          imageURL="https://cdn-images-1.medium.com/max/1600/1*dE4F_nf8P60V2baaaOxgLQ.jpeg"
+          title="Stackathon"
+          type="Project"
+        />
+
         <div className="card">
           <div className="header inverted-box">
             <h4>Capstone</h4>
