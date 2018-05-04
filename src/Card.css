@@ -74,3 +74,15 @@
   display: inline;
   padding: 0px 10px;
 }
+
+.attribute p {
+  display: inline;
+}
+
+.attribute button {
+  margin: 0;
+}
+
+.attribute {
+  margin: 15px 2px;
+}
