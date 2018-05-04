@@ -48,31 +48,21 @@ class App extends Component {
           </div>
         </Card>
 
-        <div className="card">
-          <div className="header inverted-box">
-            <h4>Student</h4>
-            <h5 className="cost">2</h5>
+        <Card
+          cost={2}
+          imageURL="http://www.poultrysoftware.co.za/wp-content/uploads/2015/11/Lady-programming-4a.jpg"
+          title="Student"
+          type="Person"
+        >
+          <div className="attribute">
+            <button className="inverted-box">Submit PR</button>
+            <p>gain 10 XP</p>
           </div>
-          <img src="http://www.poultrysoftware.co.za/wp-content/uploads/2015/11/Lady-programming-4a.jpg" />
-          <div className="inverted-box">
-            <p>Person</p>
+          <div className="attribute">
+            <button className="inverted-box">Submit Help Ticket</button>
+            <p>gain 5 XP, next PR XP doubled</p>
           </div>
-          <div className="card-text">
-            <div className="card-attributes">
-              <div className="attribute">
-                <button className="inverted-box">Submit PR</button>
-                <p>gain 10 XP</p>
-              </div>
-              <div className="attribute">
-                <button className="inverted-box">Submit Help Ticket</button>
-                <p>gain 5 XP, next PR XP doubled</p>
-              </div>
-            </div>
-          </div>
-          <div className="footer">
-            <p>FSA Card Game</p>
-          </div>
-        </div>
+        </Card>
 
         <div className="card">
           <div className="header inverted-box">
