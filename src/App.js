@@ -84,6 +84,16 @@ class App extends Component {
             outcome="gain 10 XP, curry 5 favor"
           />
         </Card>
+
+        <Card
+          cost={4}
+          imageURL="https://images.vexels.com/media/users/3/144141/isolated/lists/ab09675d1ea143dc9b03d244a3d7487a-shopping-kart.png"
+          title="Grace Shopper"
+          type="Person"
+        >
+          <Effect text="Win the game by submitting 15 PRs" />
+          <Effect text="Lose the game by suffering a major security breach" />
+        </Card>
       </div>
     );
   }
