@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './Card.css';
 
-const Card = ({ cost, imageURL, title, type }) => (
+const Card = ({ children, cost, imageURL, title, type }) => (
   <div className="card">
     <div className="header inverted-box">
       <h4>{title}</h4>
@@ -13,7 +13,7 @@ const Card = ({ cost, imageURL, title, type }) => (
       <p>{type}</p>
     </div>
     <div className="card-text">
-      <div className="card-attributes">attributes go here</div>
+      <div className="card-attributes">{children}</div>
     </div>
     <div className="footer">
       <p>FSA Card Game</p>
@@ -32,32 +32,21 @@ class App extends Component {
           type="Project"
         />
 
-        <div className="card">
-          <div className="header inverted-box">
-            <h4>Capstone</h4>
-            <h5 className="cost">5</h5>
+        <Card
+          cost={5}
+          imageURL="https://tpkbrenner.files.wordpress.com/2013/09/logo_capstone.jpg"
+          title="Capstone"
+          type="Project"
+        >
+          <div className="attribute">
+            <p>
+              When this card is played, remove any other Project cards from play
+            </p>
           </div>
-          <img src="https://tpkbrenner.files.wordpress.com/2013/09/logo_capstone.jpg" />
-          <div className="inverted-box">
-            <p>Project</p>
+          <div className="attribute">
+            <p>Students gain double XP</p>
           </div>
-          <div className="card-text">
-            <div className="card-attributes">
-              <div className="attribute">
-                <p>
-                  When this card is played, remove any other Project cards from
-                  play
-                </p>
-              </div>
-              <div className="attribute">
-                <p>Students gain double XP</p>
-              </div>
-            </div>
-          </div>
-          <div className="footer">
-            <p>FSA Card Game</p>
-          </div>
-        </div>
+        </Card>
 
         <div className="card">
           <div className="header inverted-box">
