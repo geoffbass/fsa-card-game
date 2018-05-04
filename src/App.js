@@ -21,6 +21,19 @@ const Card = ({ children, cost, imageURL, title, type }) => (
   </div>
 );
 
+const Effect = ({ text }) => (
+  <div className="attribute">
+    <p>{text}</p>
+  </div>
+);
+
+const Ability = ({ name, outcome }) => (
+  <div className="attribute">
+    <button className="inverted-box">{name}</button>
+    <p>{outcome}</p>
+  </div>
+);
+
 class App extends Component {
   render() {
     return (
@@ -38,14 +51,8 @@ class App extends Component {
           title="Capstone"
           type="Project"
         >
-          <div className="attribute">
-            <p>
-              When this card is played, remove any other Project cards from play
-            </p>
-          </div>
-          <div className="attribute">
-            <p>Students gain double XP</p>
-          </div>
+          <Effect text="When this card is played, remove any other Project cards from play" />
+          <Effect text="Students gain double XP" />
         </Card>
 
         <Card
@@ -54,44 +61,29 @@ class App extends Component {
           title="Student"
           type="Person"
         >
-          <div className="attribute">
-            <button className="inverted-box">Submit PR</button>
-            <p>gain 10 XP</p>
-          </div>
-          <div className="attribute">
-            <button className="inverted-box">Submit Help Ticket</button>
-            <p>gain 5 XP, next PR XP doubled</p>
-          </div>
+          <Ability name="Submit PR" outcome="gain 10 XP" />
+          <Ability
+            name="Submit Help Ticket"
+            outcome="gain 5 XP, next PR XP doubled"
+          />
         </Card>
 
-        <div className="card">
-          <div className="header inverted-box">
-            <h4>Fellow</h4>
-            <h5 className="cost">3</h5>
-          </div>
-          <img src="https://static1.squarespace.com/static/53b7d42de4b04cfc3188c6eb/t/5a16cd1a4192021369940b18/1511443762277/classroom-1297775_640.png" />
-          <div className="inverted-box">
-            <p>Person</p>
-          </div>
-          <div className="card-text">
-            <div className="card-attributes">
-              <div className="attribute">
-                <p>Students earn 20% more XP for each action</p>
-              </div>
-              <div className="attribute">
-                <button className="inverted-box">Lead Standup</button>
-                <p>gain 2 XP, students can submit 2 PRs this turn</p>
-              </div>
-              <div className="attribute">
-                <button className="inverted-box">Answer Help Ticket</button>
-                <p>gain 10 XP, curry 5 favor</p>
-              </div>
-            </div>
-          </div>
-          <div className="footer">
-            <p>FSA Card Game</p>
-          </div>
-        </div>
+        <Card
+          cost={3}
+          imageURL="https://static1.squarespace.com/static/53b7d42de4b04cfc3188c6eb/t/5a16cd1a4192021369940b18/1511443762277/classroom-1297775_640.png"
+          title="Fellow"
+          type="Person"
+        >
+          <Effect text="Students earn 20% more XP for each action" />
+          <Ability
+            name="Lead Standup"
+            outcome="gain 2 XP, students can submit 2 PRs this turn"
+          />
+          <Ability
+            name="Answer Help Ticket"
+            outcome="gain 10 XP, curry 5 favor"
+          />
+        </Card>
       </div>
     );
   }
