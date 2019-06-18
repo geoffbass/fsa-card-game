@@ -55,7 +55,9 @@ class App extends Component {
           imageURL="https://cdn-images-1.medium.com/max/1600/1*dE4F_nf8P60V2baaaOxgLQ.jpeg"
           title="Stackathon"
           type="Project"
-        />
+        >
+          <Effect text="Students earn 2X self-sufficiency points" />
+        </Card>
 
         <Card
           cost={5}
@@ -101,7 +103,7 @@ class App extends Component {
           cost={4}
           imageURL="https://images.vexels.com/media/users/3/144141/isolated/lists/ab09675d1ea143dc9b03d244a3d7487a-shopping-kart.png"
           title="Grace Shopper"
-          type="Person"
+          type="Project"
         >
           <Effect text="Win the game by submitting 15 PRs" />
           <Effect text="Lose the game by suffering a major security breach" />
